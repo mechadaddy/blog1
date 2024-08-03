@@ -1,0 +1,11 @@
+{
+  "name": "4.5-blog-project",
+  "version": "1.0.0",
+  "description": "This is my first blog project, without any database information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Richard Smith",
+  "license": "ISC"
+}
