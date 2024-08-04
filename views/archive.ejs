@@ -1,0 +1,24 @@
+<%- include ("partials/header.ejs") %>
+
+<h1>Archive Page</h1>
+
+<h1>Archive</h1>
+
+<ul>
+    <% posts.forEach(function(post) { %>
+      <li class="post-card">
+        <strong>Title:</strong> <%= post.title %><br>
+        <strong>Content:</strong> <%= post.content %><br>
+        <strong>Date of Posting:</strong> <%= post.date %><br>
+        <form action="/delete-post" method="POST" style="display: inline;">
+          <input type="hidden" name="postId" value="<%= post.id %>">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+  <form action="/" method="GET">
+    <button type="submit">Go Home</button>
+</form>
+
+<%- include ("partials/footer.ejs") %>

@@ -7,16 +7,29 @@
 <h1>Archive</h1>
 
 <ul>
-    <% posts.forEach(function(post) { %>
-      <li>
-        Title: <%= post.title %><br>
-        Content: <%= post.content %><br>
-        Time of Posting: <%= post.time %>
-      </li>
-    <% }); %>
-  </ul>
+  <% posts.forEach(function(post) { %>
+    <li>
+      <strong>Title:</strong> <%= post.title %><br>
+      <strong>Content:</strong> <%= post.content %><br>
+      <strong>Date of Posting:</strong> <%= post.date %><br>
+      <form action="/delete-post" method="POST" style="display: inline;">
+        <input type="hidden" name="postId" value="<%= post.id %>">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+      <a href="/edit-post/<%= post.id %>" class="btn btn-primary" style="display: inline;">Edit</a>
+    </li>
+  <% }); %>
+</ul>
 
-  <form action="/archive" method="GET">
-    <button type="submit">See More</button>
+
+<div style="display: flex;">
+  <form action="/archive" method="GET" style="margin-right: 5px">
+    <button type="submit">Archive</button>
+  </form>
+
+  <form action="/new" method="GET">
+    <button type="submit">New Post</button>
+  </form>
+</div>
 
 <%- include ("partials/footer.ejs") %>
