@@ -9,14 +9,16 @@
       <li class="post-card">
         <strong>Title:</strong> <%= post.title %><br>
         <strong>Content:</strong> <%= post.content %><br>
-        <strong>Date of Posting:</strong> <%= post.date %><br>
+        <strong>Date of Posting:</strong> <p class=subtle style="display: inline"><%= post.date %></p> <br>
         <form action="/delete-post" method="POST" style="display: inline;">
           <input type="hidden" name="postId" value="<%= post.id %>">
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>
+        <a href="/edit-post/<%= post.id %>" class="btn btn-primary" style="display: inline;">Edit</a>
       </li>
     <% }); %>
   </ul>
+  
   <form action="/" method="GET">
     <button type="submit">Go Home</button>
 </form>

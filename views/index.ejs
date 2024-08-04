@@ -8,10 +8,10 @@
 
 <ul>
   <% posts.forEach(function(post) { %>
-    <li>
+    <li class="post-card">
       <strong>Title:</strong> <%= post.title %><br>
       <strong>Content:</strong> <%= post.content %><br>
-      <strong>Date of Posting:</strong> <%= post.date %><br>
+      <strong>Date of Posting:</strong> <p class=subtle style="display: inline"><%= post.date %></p> <br>
       <form action="/delete-post" method="POST" style="display: inline;">
         <input type="hidden" name="postId" value="<%= post.id %>">
         <button type="submit" class="btn btn-danger">Delete</button>
