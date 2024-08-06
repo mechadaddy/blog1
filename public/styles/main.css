@@ -78,7 +78,7 @@ ul {
         visibility: hidden !important;
     }
 
-    .navbar {
+    .navbar2 {
         display: flex;
         justify-content: space-around; /* Space the icons evenly */
         align-items: center;
@@ -90,12 +90,12 @@ ul {
         border-top: 1px solid #e0e0e0; /* Optional: Top border for separation */
         z-index: 10;
       }
-      .navbar a {
+      .navbar2 a {
         display: inline-block;
         text-align: center;
         z-index: 20;
       }
-      .navbar img {
+      .navbar2 img {
         width: 150%; /* Size of the icons */
         height: auto;
       }
@@ -108,7 +108,7 @@ ul {
         top: -50%
       }
 
-      .navbar-accent {
+      .navbar-accent2 {
         position: absolute; /* Position it absolutely within the footer */
         width: 20%; /* Slightly larger than the icons */
         height: 150%; /* Make it a circle by setting equal width and height */
