@@ -13,8 +13,9 @@ footer {
 
 .custom-input-height {
     height: 200px;
+    resize: none; /* Optional: Prevents resizing of the textarea */
+    overflow-y: auto; /* Ensures scrollbar appears if content exceeds height */
   }
-
   .post-card {
     width: 100%;
     padding: 15px;
