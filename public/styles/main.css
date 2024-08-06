@@ -1,5 +1,5 @@
 html body {
-    overflow: hidden;
+    overflow: auto;
     background-color: #2b85b7
 }
 
@@ -12,7 +12,7 @@ footer {
 
 
 .custom-input-height {
-    height: 200px;
+    height: 50vh;
     resize: none; /* Optional: Prevents resizing of the textarea */
     overflow-y: auto; /* Ensures scrollbar appears if content exceeds height */
   }
