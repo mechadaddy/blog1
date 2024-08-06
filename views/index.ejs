@@ -1,35 +1,41 @@
 <%- include ("partials/header.ejs") %>
 
-<h1>Home Page</h1>
-
-<h1>Hero</h1>
-
-<h1>Archive</h1>
-
-<ul>
-  <% posts.forEach(function(post) { %>
-    <li class="post-card">
-      <strong>Title:</strong> <%= post.title %><br>
-      <strong>Content:</strong> <%= post.content %><br>
-      <strong>Date of Posting:</strong> <p class=subtle style="display: inline"><%= post.date %></p> <br>
-      <form action="/delete-post" method="POST" style="display: inline;">
-        <input type="hidden" name="postId" value="<%= post.id %>">
-        <button type="submit" class="btn btn-danger">Delete</button>
-      </form>
-      <a href="/edit-post/<%= post.id %>" class="btn btn-primary" style="display: inline;">Edit</a>
-    </li>
-  <% }); %>
-</ul>
-
-
-<div style="display: flex;">
-  <form action="/archive" method="GET" style="margin-right: 5px">
-    <button type="submit">Archive</button>
-  </form>
-
-  <form action="/new" method="GET">
-    <button type="submit">New Post</button>
-  </form>
+<div class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <h1 class="display-4">It's your own personal blog</h1>
+      <p class="lead">Make posts, edit posts, delete posts; its your oyster</p>
+      <a href="#more-info" class="btn btn-primary btn-lg">Learn More</a>
+    </div>
+  </div>
 </div>
+
+<h1 style="text-align: center; padding: 5%; color: white;">Your most recent post</h1>
+
+<div class="archive-index">
+  <ul>
+    <% if (posts.length > 0) { %>
+      <% const recentPost = posts[posts.length - 1]; %>
+      <li class="post-card">
+        <div class="card-content">
+          <strong>Title:</strong> <%= recentPost.title %><br>
+          <strong>Content:</strong> <%= recentPost.content %><br>
+          <strong>Date of Posting:</strong> <p class="subtle" style="display: inline"><%= recentPost.date %></p>
+        </div>
+        <div class="card-actions" style="margin-top: 2%;">
+          <form action="/delete-post" method="POST" style="display: inline-block; width: 45%;">
+            <input type="hidden" name="postId" value="<%= recentPost.id %>">
+            <button type="submit" class="btn btn-danger" style="width: 100%;">Delete</button>
+          </form>
+          <a href="/edit-post/<%= recentPost.id %>" class="btn btn-primary" style="display: inline-block; width: 45%; margin-left: 5%;">Edit</a>
+        </div>
+      </li>
+    <% } else { %>
+      <li class="no-posts-message">You haven't made any posts yet</li>
+    <% } %>
+  </ul>
+</div>
+
+
 
 <%- include ("partials/footer.ejs") %>

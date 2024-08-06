@@ -1,5 +1,6 @@
-html {
+html body {
     overflow: hidden;
+    background-color: #2b85b7
 }
 
 footer {
@@ -14,10 +15,32 @@ footer {
     height: 200px;
   }
 
-.post-card {
-    background-color: pink;
-    margin-bottom: 10px;
-}
+  .post-card {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .card-content {
+    margin-bottom: 15px;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-actions .btn {
+    width: 45%; /* Each button takes up 45% of the width, with space between them */
+  }
+  
+  .no-posts-message {
+    text-align: center;
+    padding: 20px;
+  }
 
 ul {
     list-style-type: none;
@@ -30,17 +53,69 @@ ul {
     font-weight: 100;
 }
 
-h1 {
-    color: red;
-}
+
+.hero {
+    background-image: url('/images/background-beach.avif'); /* Set the path to your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 50vh; /* Full height of the viewport */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    color: white; /* Text color */
+  }
+
+  .hero-text {
+    max-width: 600px; /* Limit the width of the text content */
+    padding: 20px; /* Add some padding */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark background for better text readability */
+    border-radius: 10px; /* Optional: Round the corners */
+  }
+
 @media (max-width: 550px) {
     .footer {
         visibility: hidden !important;
     }
 
     .navbar {
-        position: absolute !important;
-        bottom: -25px !important;
-        width: 100% !important;
-    }
-  }
+        display: flex;
+        justify-content: space-around; /* Space the icons evenly */
+        align-items: center;
+        background-color: #f8f9fa; /* Light grey background */
+        padding: 10px 0; /* Some padding for spacing */
+        position: fixed; /* Fixed at the bottom */
+        bottom: 0;
+        width: 100%;
+        border-top: 1px solid #e0e0e0; /* Optional: Top border for separation */
+        z-index: 10;
+      }
+      .navbar a {
+        display: inline-block;
+        text-align: center;
+        z-index: 20;
+      }
+      .navbar img {
+        width: 150%; /* Size of the icons */
+        height: auto;
+      }
+
+      .feather-icon img {
+        width: 7%;
+        height: auto;
+        position: absolute;
+        left: 47%;
+        top: -50%
+      }
+
+      .navbar-accent {
+        position: absolute; /* Position it absolutely within the footer */
+        width: 20%; /* Slightly larger than the icons */
+        height: 150%; /* Make it a circle by setting equal width and height */
+        background-color: #f8f9fa; /* Same as navbar background color */
+        border-radius: 50%; /* Make it round */
+        z-index: 15; /* Ensure it is behind the icons but above footer background */
+        left: 40%;
+        top: -80%;
+        border-top: 1px solid #e0e0e0;
+      }
+}

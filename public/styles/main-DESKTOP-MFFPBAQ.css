@@ -1,0 +1,61 @@
+html {
+    overflow: hidden;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+.custom-input-height {
+    height: 200px;
+  }
+
+.post-card {
+    background-color: pink;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+
+.subtle {
+    font-style: italic;
+    font-weight: 100;
+}
+
+h1 {
+    color: red;
+}
+
+@media (max-width: 550px) {
+    .footer {
+        visibility: hidden !important;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-around; /* Space the icons evenly */
+        align-items: center;
+        background-color: #f8f9fa; /* Light grey background */
+        padding: 10px 0; /* Some padding for spacing */
+        position: fixed; /* Fixed at the bottom */
+        bottom: 0;
+        width: 100%;
+        border-top: 1px solid #e0e0e0; /* Optional: Top border for separation */
+      }
+      .navbar a {
+        display: inline-block;
+        text-align: center;
+      }
+      .navbar img {
+        width: 1000%; /* Size of the icons */
+        height: auto;
+      }
+}
